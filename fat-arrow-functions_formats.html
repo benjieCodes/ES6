@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Arrow Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        const names = ['benjie', 'anna', 'selah'];
+
+        // before ES6
+        var fullNames = names.map(function (name) {
+            return `${name} songsong`; 
+        });
+
+        // FAF format
+        const fullNames2 = names.map((name) => {
+            return `${name} songsong`; 
+        });
+
+        // if you only have one parameter you don't need parantheses 
+        const fullNames3 = names.map(name => {
+            return `${name} songsong`; 
+        });
+
+        // implicit return (remove return and curly brackets) 
+        const fullNames4 = names.map (name => `${name} songsong`);
+
+        // no argument just add empty parentheses
+        const fullNames5 = names.map( () => `cool songsong` );
+
+        const sayMyName = (name) => { alert(`Hello ${name}!`)};
+        sayMyName('Benjie')
+        
+    </script>
+</body>
+</html>
