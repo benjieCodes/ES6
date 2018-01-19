@@ -13,15 +13,23 @@
 <body>
 
     <script>
-        // IFFE
-        (function () {
-            var name = 'benjie';
-            console.log(name);
-            
-        })()
-        
-        
+        const key = 'abc123';
+        let points = 50;
+        let winner = false;
 
+
+        points = 60;
+        key = 'abc1234'; // cannot be updated
+
+        if (points > 40) {
+            console.log('it ran!') // console still logs false;
+            let winnder = true;
+        }
+
+        const person = {
+            name: benjie, // these values are still mutable, just not the value 'person'
+            age: 26
+        }
 
     </script>
 </body>
