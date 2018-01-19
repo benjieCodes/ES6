@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Author">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <script>
+        // before ES6
+        function calculateBill(total, tax, tip) {
+            tax = tax || .04;
+            tip = tip || .15;
+            return total + (total * tax) + (total * tip);
+        }
+
+        // With ES6 you are able to assign values in the arguments
+        function ES6calculateBill(total, tax = .04, tip = .15) {
+            return total + (total * tax) + (total * tip);
+        }
+
+        const totalBill = calculateBill(200)
+        const totalBill2 = ES6calculateBill(200);
+        console.log(totalBill);
+        console.log(totalBill2);
+    </script>
+</body>
+
+</html>
