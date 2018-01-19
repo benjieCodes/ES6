@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Arrow Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        const race = '100m dash';
+        const winners = ['Benjie', 'Anna', 'Other Person'];
+
+        var win = winners.map(function (winner, i) {
+            return {name: winner, race: race, place: i+1};
+        })
+        // E6 version 
+        const ES6win = winners.map((winner, i) => ({name: winner, race, place: i + 1})); // extra parenthesis show that you're showing an object literal and not a function bracket
+
+        const ages = [23, 64, 24, 66, 12, 57, 43, 16, 86];
+        
+        var old = ages.filter(function (age) {
+            if (age >= 60) {
+                return age;
+            }
+        })
+        // ES6 version
+        const ES6old = ages.filter(age => age >= 60);
+       
+
+    </script>
+</body>
+</html>
