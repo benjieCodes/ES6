@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Template Literals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .hl {
+            background: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function highlight (strings, ...values) { // strings array will always be one bigger than values (ex strings = Array[3] && values = Array[2])
+            let str = '';
+            strings.forEach((string, i) => {
+                str+= `${string} <span contenteditable class="hl">${values[i] || ''}</span>`
+            });
+            return str;
+        }
+        const name = 'Gazpacho';
+        const age = '3';
+        const sentence = highlight`My dog's name is ${name} and he is ${age} years old.`
+        console.log(sentence);
+        
+        document.body.innerHTML = sentence;
+    </script>
+</body>
+</html>
