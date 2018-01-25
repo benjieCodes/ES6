@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        const learning = 'ES6';
+        const accountNumber = '4147293828392091';
+        const taxNumber = '30380235RT1234';
+
+        const first = 'First Place';
+        const second = 'Last';
+        const last = 'Lastest';
+
+        // .startsWith();
+        console.log(learning.startsWith('ES')); // true;
+        console.log(learning.startsWith('es')); // false (not case sensitive)
+        
+        // .endsWith();
+        console.log(accountNumber.endsWith('2091')); // true
+        console.log(taxNumber.endsWith('RT')); // false
+        console.log(taxNumber.endsWith('RT', 10)); // true
+
+        // includes();
+        console.log(taxNumber.includes('RT')); // true
+
+        // repeat();
+        function consoleLeftPadding(str, length = 20) {
+            return cool = ` -> ${' '.repeat(length - str.length)}${str}`;     
+        }
+        
+        console.log(consoleLeftPadding(first));
+        console.log(consoleLeftPadding(second));
+        console.log(consoleLeftPadding(last));
+        
+        console.log(`${'Robin' / 2}`.repeat(10) + ' Batman!');         
+    </script>
+</body>
+</html>
