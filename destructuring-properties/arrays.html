@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+    const details = ['Benjie', 26, 'Web Developer'];
+    const [name, age, job] = details;
+    
+    console.log(name, age, job);
+
+    const data = 'Golf, clubs, MP-18, 003203, 16, 1199.99'
+    const [sports, category, model, sku] = data.split(',');
+    // stock (16) and price ($1199.99) is not relevant in the data
+
+    const family = ['Anna', 'AJ', 'Sarah', 'John', 'Rachel'];
+    const [wife, sister, ...sibs] = family;
+    // ...sibs used the "rest" to indicate that Sarah John and Rachel are all sibs.
+    
+    </script>
+</body>
+</html>
