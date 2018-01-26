@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Destructuring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        let inRing = 'Matt Hardy';
+        let onSide = 'Jeff Hardy';
+
+        console.log(`I used Old School WWE to sample destructuring variables`);
+        
+
+        console.log(inRing, onSide);
+        console.log(`TAG YOU'RE IN!`);
+
+        [inRing, onSide] = [onSide, inRing]; // Destructure to switch variable;
+        console.log(inRing, onSide);
+
+        console.log('SWANTON BOMBBBBBB 💣');
+        console.log(`1... 2... 3... PIN`);
+    </script>
+</body>
+</html>
