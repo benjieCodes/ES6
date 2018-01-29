@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Looping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+         const notIterable = {
+            i:'am',
+            an: 'object',
+            so: 'i',
+            cannot: 'be looped'
+        }
+        const apple = {
+            color: 'red',
+            size: 'medium',
+            weight: 50,
+            sugar: 10,
+        }
+
+        // for (let prop of notIterable) {
+        //     console.log(notIterable);
+        // }
+
+        // how to "for of loop" an Object 
+        // convert Object to Object.keys()
+        for (let prop of Object.keys(apple)) {
+            const value = apple[prop];
+            console.log(value);
+        };
+    </script>
+</body>
+</html>
