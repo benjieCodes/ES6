@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Iteration and Looping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <p>Hi I am p 01</p>
+    <p>Hi I am p 02</p>
+    <p>Hi I am p 03</p>
+    <p>Hi I am p 04</p>
+    <p>Hi I am p 05</p>
+    <p>Hi I am p 06</p>
+    <p>Hi I am p 07</p>
+    <p>Hi I am p 08</p>
+    <p>Hi I am p 09</p>
+    <p>Hi I am p 10</p>
+    <script>
+        const guitars = ['Fender', 'Ibanez', 'Taylor', 'Martin', 'Gretsch']
+
+        // loop over numbers
+        function addUpNumbers() {
+            let total = 0;
+            for (const num of arguments) {
+                total += num;
+            }
+            console.log(total);
+        }
+        addUpNumbers(4, 345, 34, 2, 47, 84, 34)
+
+        // loop over string
+        const name = "Benjie Songsong";
+        for (const char of name) {
+            console.log(char);
+        }
+
+        const ps = document.querySelectorAll('p'); 
+        for (paragraph of ps) {
+            paragraph.addEventListener('click', function() {
+                console.log(this.textContent);  
+            });
+        }
+    </script>
+
+</body>
+
+</html>
