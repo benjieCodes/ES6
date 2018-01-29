@@ -28,13 +28,28 @@
             // console.log(guitars[index]);
         // }
 
-        // cannot use objects
-        for (const guitar of guitars) {
-            if (guitar === 'Ibanez') {
-                continue;
-            }
-            console.log(guitar);
+        // *** For of loop can handle and loop over any data EXCEPT objects ***
+        for (const [i, guitar] of guitars.entries()) { 
+            console.log(`${guitar} is the ${i} item`);   
         }
+
+        // loop over numbers
+        function addUpNumbers() {
+            let total = 0;
+            for (const num of arguments) {
+                total += num;
+            }
+            console.log(total);
+        }
+        addUpNumbers(4,345,34,2,47,84,34)
+
+        // loop over string
+        const name = "Benjie Songsong";
+        for (const char of name) {
+            console.log(char);
+        }
+
+
     </script>
 </body>
 </html>
