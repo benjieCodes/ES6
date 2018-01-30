@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Array Improvements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="people">
+        <p>Benjie</p>
+        <p>Anna</p>
+        <p>John</p>
+    </div>
+    <script>
+        const people = document.querySelectorAll('.people p');
+        console.log(people); // returns an Array "ish" statement;
+        // people.map((person) => console.log(person));  this map will not work because it is not a TRUE Array
+
+        // to convert to array we use Array.from();
+        const peopleArray = Array.from(people);
+        console.log(peopleArray); // returns a true array!
+        const names = peopleArray.map( person => person.textContent);
+        console.log(names); // returns names taken from the DOM element
+
+        // Array.of creates an array of items
+        const ofExample = Array.of('I', "am", "an", "array");
+        console.log(ofExample);
+
+        function sumAll() {
+            const numbers = Array.from(arguments); 
+            return numbers.reduce((prev, next) => prev + next, 0);
+        }
+        console.log(`The total for the sum all is: ${sumAll(4,234,543,63,34,543,5745,3,64)}`)
+    
+    </script>
+</body>
+
+</html>
