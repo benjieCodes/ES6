@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spread Operator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+    // PIZZA EXAMPLE ON HOW TO USE SPREAD OPERATOR
+    const specialty = ['Deep Dish', 'Margherita', 'Thin Crust', 'New York'];
+    const featured = ['Artichoke', 'Pepperoni', 'Hawaiian'];
+
+    const pizzas = [...specialty, 'Meat Lovers', ...featured];
+    console.log(pizzas);
+    const copyOfPizzas = [...pizzas];
+    copyOfPizzas[0] = 'Anchovies';
+
+    // Spread allows you to continually add new content to iterable data!
+    console.log('copy of pizza array: ' + copyOfPizzas);
+    console.log('original pizza array: ' + pizzas);
+
+    </script>
+</body>
+</html>
