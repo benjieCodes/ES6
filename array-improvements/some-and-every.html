@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Array Improvements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        // These methods are not ES6 but decided to add them for more Array examples
+
+        const ages = [15, 42, 63, 11, 26];
+        
+        // Is there at least one adult in the group?
+        const adultPresent = ages.some(age => age >= 18);
+        console.log(adultPresent);
+        
+        // Is everyone allowed to legally drink? 🍻
+        const oldEnough = ages.every(age => age >= 21);
+        console.log(oldEnough);
+        
+    </script>
+</body>
+</html>
