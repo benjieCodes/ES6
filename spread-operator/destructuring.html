@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Spread Operator</title>
+</head>
+
+<body>
+
+
+  <script>
+    function convertCurrency(rate, tax, tip, ...amounts) {
+      console.log(rate, tax, tip, amounts);
+
+      return amounts.map(amount => amount * rate);
+    }
+
+    const amounts = convertCurrency(1.42, 2, 10, 14, 34, 56, 103);
+    console.log(amounts);
+
+
+    // jogging application
+    const runner = ['Benjie Songsong', 1337, 1.2, 2, 2.1, 3, 3.5];
+
+    const [name, id, ...miles] = runner;
+    console.log(name, id, miles); // easily captures data because of spread
+
+    const team = ['Benjie', 'Anna', 'John', 'Rachel', 'Sarah', 'Ayler'];
+    const [captain, assistant, ...players] = team;
+    console.log(captain, assistant, players);
+  </script>
+</body>
+
+</html>
