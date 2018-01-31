@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spread Operator</title>
+</head>
+
+<body>
+
+    <script>
+        const inventors = ['Einsten', 'Newton', 'Galileo'];
+        const newInventors = ['Musk', 'Jobs'];
+        const futureInventors = ['Songsong'];
+        inventors.push.apply(inventors, newInventors);
+        console.log(inventors);
+        // ES6 spread;
+        inventors.push(...futureInventors);
+        console.log(inventors);
+
+        const name = ['Benjie', 'Songsong', 'Irrelevant'];
+
+        function sayHello(first, last) {
+            alert(`Hey there ${first} ${last}`);
+        }
+
+        sayHello(...name); // instead of having to do sayHello(name[0], name[1]);
+    </script>
+</body>
+
+</html>
