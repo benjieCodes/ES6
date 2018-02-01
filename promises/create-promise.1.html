@@ -29,17 +29,17 @@
         ];
 
         const artists = [{
-                artist: 'Cory Asbury',
+                name: 'Cory Asbury',
                 album: 'Reckless Love',
                 twitter: '@realcoryasbury',
             },
             {
-                artist: 'Hillsong United',
+                name: 'Hillsong United',
                 album: 'Zion',
                 twitter: '@hillsong'
             },
             {
-                artist: 'Chris Tomlin',
+                name: 'North Point',
                 album: 'Hear(Live)',
                 twitter: '@northpoint'
             }
@@ -58,7 +58,28 @@
             });
         }
 
-        getBandById(2).then(band => console.log(band)); // successfully received promised band and logged band
+        function hydrateArtist(band) {
+            return new Promise((resolve, reject) => {
+                const artistDetails = artists.find(artist => artist.name === band.artist);
+                if (artistDetails) {
+                    band.artist = artistDetails;
+                    resolve(band);
+                } else {
+                    reject(Error('Band was not found, but could not find the artist!'))
+                }
+            });
+        }
+        getBandById(2)
+            .then(band => {
+                console.log(band);
+                return hydrateArtist(band);
+            })
+            .then(band => {
+                console.log(band);
+
+            }).catch(err => {
+                console.error(err);
+            }) // successfully received promised band and logged band
     </script>
 </body>
 
