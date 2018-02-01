@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Literals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <script>
+        const first = 'Benjie';
+        const last = 'Songsong';
+        const age = 26;
+        const job = 'Web Developer';
+        const hobby = 'Musician';
+
+        // if property name and object variable are the same name (SYNTAX UPGRADE BELOW)
+        const info = {
+            firstName: first, // before ES6
+            lastName: last, // before E6
+            age, // ES6 object literal
+            job,
+            hobby
+        }
+        console.log(info);
+
+        const modal = {
+            create() {
+
+            }, // shorthand ES6
+
+            open: function () { // before ES6
+
+            },
+
+            close() {
+
+            }
+        }
+        // when key needs to be set on an object
+        const key = 'pocketColor';
+        const value = '#ffffff';
+        const oppositeValue = '#000000'
+
+        const color = {
+            [key]: value,
+            [`${key}Opposite`]: oppositeValue
+            // before ES6_______
+            // color[key]: value,
+            // color[`${key}Opposite`]: oppositeValue
+        };
+        console.log(color);
+
+        const keys = ['type', 'color', 'brand'];
+        const values = ['electric', 'charcoal', 'fender'];
+
+        const guitar = {
+            [keys.shift()]: values.shift(),
+            [keys.shift()]: values.shift(),
+            [keys.shift()]: values.shift(),
+        }
+        console.log(guitar);
+    </script>
+</body>
+
+</html>
