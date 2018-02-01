@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Promises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(Error('Benjie isn\'t cool')); // added an error object to log where error is occuring
+            }, 1000)
+        });
+
+        p
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    </script>
+</body>
+
+</html>
