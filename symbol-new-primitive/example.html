@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Symbol Primitive</title>
+</head>
+
+<body>
+    <script>
+        // Symbol helps in avodiding multiple naming collisions
+        const benjie = Symbol('benj') // symbol is basically like a very unique ed (ie. dkjfaiodjgnaejksgnfejkiou234htiojekabgkjeaoitrjwp)
+        const person = Symbol('benj');
+
+        // they are absolutely unique even if it's the same name
+        console.log(benjie);
+        console.log(person); // doesnt throw an errow
+
+        benjie === person // false
+        benjie == person // false
+
+        const guitars = {
+            [Symbol('Fender')]: {
+                type: 'Telecaster',
+                pickup: 'HH'
+            },
+            [Symbol('Fender')]: {
+                type: 'Telecaster',
+                pickup: 'HH'
+            },
+            [Symbol('Fender')]: {
+                type: 'Stratocaster',
+                pickup: 'SSS'
+            }
+        }
+        console.log(guitars); // they did not override each other
+    </script>
+</body>
+
+</html>
