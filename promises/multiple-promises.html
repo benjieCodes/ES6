@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Promises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        const presidentsJSON = 'http://mysafeinfo.com/api/data?list=presidents&format=json';
+        const statesJSON = 'http://mysafeinfo.com/api/data?list=states&format=json';
+
+        const presidentsPromise = fetch(presidentsJSON);
+        const statesPromise = fetch(statesJSON);
+
+        presidentsPromise
+            .then(data => data.json())
+            .then(data => console.log(data));
+    </script>
+</body>
+
+</html>
