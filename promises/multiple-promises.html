@@ -16,9 +16,13 @@
         const presidentsPromise = fetch(presidentsJSON);
         const statesPromise = fetch(statesJSON);
 
-        presidentsPromise
-            .then(data => data.json())
-            .then(data => console.log(data));
+
+        // chaining promises using Promise.all()
+        Promise
+            .all([presidentsPromise, statesPromise])
+            .then(responses => {
+                return Promise.all(responses.map(res => res.json())) // converted it to JSON
+            }).then(responses => console.log(responses)); // connected both JSON promises together!
     </script>
 </body>
 
