@@ -7,12 +7,15 @@ import {
     url,
     sayHi
 } from './src/config';
-console.log(defaultApiKey, +' : ' + url);
 
-sayHi('Benjie')
+import User, {
+    createURL,
+    gravatar
+} from './src/user';
 
-
-const ages = [1, 41, 42, 42, 5];
-
-console.log(uniq(ages));
-console.log($);
+const benjie = new User('Benjie', 'benjiecodes@gmail.com', 'https://github.com/benjiecodes');
+const profile = createURL(benjie.name);
+const image = gravatar(benjie.email);
+console.table(benjie)
+console.log(profile);
+console.log(image);
