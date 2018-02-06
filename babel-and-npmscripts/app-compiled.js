@@ -10,9 +10,14 @@ var _x$y$a$b = {
     y = _x$y$a$b.y,
     z = _objectWithoutProperties(_x$y$a$b, ["x", "y"]);
 
+function add(x, y) {
+  return x + y;
+}
+
+console.log(add(2, 3));
 var age = 100;
 var people = ['Benjie', 'Anna'];
 var fullNames = people.map(function (person) {
   return "".concat(person, " Songsong");
 });
-console.log(fullNames);
+console.log(fullNames[0]);
