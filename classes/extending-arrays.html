@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        class NewMovieCollection extends Array {
+            constructor(name, ...movies) {
+                super(...movies);
+                this.name = name;
+            }
+            addMovie(movie) {
+                this.push(movie);
+            }
+            topRated(limit = 10) {
+                return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+            }
+        }
+
+        const movies = new NewMovieCollection('Benjie\'s favorite movies', {
+            name: 'School of Rock',
+            stars: 10
+        }, {
+            name: 'Gladiator',
+            stars: 9
+        }, {
+            name: 'Nacho Libre',
+            stars: 5
+        }, {
+            name: 'Hillsong Movie',
+            stars: 8
+        })
+
+        movies.addMovie({
+            name: 'Star Wars',
+            stars: 7
+        })
+    </script>
+</body>
+
+</html>
