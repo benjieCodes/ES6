@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        function Dog(name, breed) {
+            this.name = name;
+            this.breed = breed;
+        }
+        const jax = new Dog('Jax', 'Golden Doodle');
+        const mack = new Dog('Mack', 'Mutt');
+        Dog.prototype.bark = function () {
+            console.log(
+                `Bark bark! My name is ${this.name}! and I\'m a ${this.breed}. 🐶`);
+        }
+
+        Dog.prototype.cuddle = function () {
+            console.log('I love youuuu');
+        }
+
+        console.log(jax); // instance of Jax
+        console.log(jax.__proto__); // prototype of functions
+    </script>
+</body>
+
+</html>
