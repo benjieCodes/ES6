@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        // see proto-review.html to view prototype before ES6
+
+        class Dog {
+            constructor(name, breed) {
+                this.name = name;
+                this.breed = breed;
+            }
+
+            bark() {
+                console.log(
+                    `Bark bark! My name is ${this.name}! and I\'m a ${this.breed}. 🐶`);
+            }
+
+            cuddle() {
+                console.log('I love youuuu');
+            }
+
+            static info() {
+                console.log('This will only be grabbed from Dog directly because it is static');
+                // jax.info() would throw an error
+            }
+
+            get description() { // this will only be grabbed by the instance (jax or mack)
+                return `${this.name} is a ${this.breed} kind of dog`;
+            }
+
+            set nickname(value) {
+                this.nick = value.trim().toUpperCase();
+            }
+
+            get nickname() {
+                return this.nick;
+            }
+
+        }
+
+        const jax = new Dog('Jax', 'Golden Doodle');
+        const mack = new Dog('Mack', 'Mutt');
+    </script>
+</body>
+
+</html>
