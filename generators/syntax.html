@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Generators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        function* listItems() {
+            let i = 0;
+            yield i;
+            i++;
+            yield i;
+            i++;
+            yield i;
+        }
+
+        const startGenerator = listItems(); // use .next() to start the loop
+
+        const inventors = [{
+                first: 'Albert',
+                last: 'Einstein',
+                year: 1879
+            },
+            {
+                first: 'Isaac',
+                last: 'Newton',
+                year: 1643
+            },
+            {
+                first: 'Galileo',
+                last: 'Galilei',
+                year: 1564
+            },
+            {
+                first: 'Marie',
+                last: 'Curie',
+                year: 1867
+            },
+            {
+                first: 'Johannes',
+                last: 'Kepler',
+                year: 1571
+            },
+            {
+                first: 'Nicolaus',
+                last: 'Copernicus',
+                year: 1473
+            },
+            {
+                first: 'Max',
+                last: 'Planck',
+                year: 1858
+            },
+        ];
+
+        function* loop(inventor) {
+            for (const inventor of inventors) {
+                yield inventor;
+            }
+        }
+
+        const inventorGenerator = loop(inventors);
+        console.log(inventorGenerator.next().value);
+        console.log(inventorGenerator.next().value);
+        console.log(inventorGenerator.next().value);
+        console.log(inventorGenerator.next().value);
+        console.log(inventorGenerator.next().value);
+        console.log(inventorGenerator.next().value);
+        console.log(inventorGenerator.next().value);
+        console.log(inventorGenerator.next()); // done is finally true after iterating through the entire array
+    </script>
+
+</body>
+
+</html>
