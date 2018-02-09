@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Iteration and Looping</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
+    <h1>For of Loops</h1>
+    <h3>Purpose:</h3>
+    <p>
+        A new loop in JS that is used to loop over any type of data that is an iterable
+    </p>
+
     <script>
         const guitars = ['Fender', 'Ibanez', 'Taylor', 'Martin', 'Gretsch']
 
@@ -25,14 +33,14 @@
 
         // CON: it will iterate everything in the array INCLUDING things added into the prototype
         // for (const index in guitars) {
-            // console.log(guitars[index]);
+        // console.log(guitars[index]);
         // }
 
         // *** For of loop can handle and loop over any data EXCEPT objects ***
-        for (const [i, guitar] of guitars.entries()) { 
-            console.log(`${guitar} is the ${i} item`);   
+        for (const [i, guitar] of guitars.entries()) {
+            console.log(`${guitar} is the ${i} item`);
         }
-
     </script>
 </body>
+
 </html>
