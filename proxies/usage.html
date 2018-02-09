@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Proxies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<h1>Proxies</h1>
+<h3>Purpose:</h3>
+<p>To overwrite the default behavior of an operation on an object </p>
+
+<body>
+    <script>
+        const phoneHandler = {
+            set(target, name, value) {
+                target[name] = value.match(/[0-9]/g).join('');
+            },
+            get(target, name) {
+                return target[name].replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3');
+            }
+        }
+
+        const phoneNumbers = new Proxy({}, phoneHandler);
+    </script>
+</body>
+
+</html>
