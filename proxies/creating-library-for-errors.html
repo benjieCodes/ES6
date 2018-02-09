@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Proxies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        const map = {};
+
+        map.longitiude = 79.3423; // spell wrong
+        map.longitude = 79.3423; // full spelling
+        map.long = 79.3423; // wrong key
+        map.lon = 79.3423; // close but no cigar
+        map.lng = 79.3423; // got it!
+
+        const person = {
+            name: 'Benjie'
+        };
+
+        person.ID = 123; // nope
+        person.iD = 123; // nope
+        person.id = 123; // got it!
+
+        // When building a library for a team, you want to make sure that there's a safety net for users to use the same property
+
+        const safeHandler = {
+            set(target, name, value) {
+                const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase())
+
+
+                if (!(name in target) && likeKey) {
+                    throw new Error(
+                        `Oops! There is already a property a ${name} property but with the case of ${likeKey}. Please set your property and value to ${likeKey}!`
+                    )
+                }
+                target[value = value];
+            }
+        }
+
+        const safety = new Proxy({
+            id: 100
+        }, safeHandler);
+
+        safety.id = 200;
+    </script>
+
+</body>
+
+</html>
