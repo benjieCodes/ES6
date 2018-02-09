@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>Sets</h1>
+    <h3>Purpose:</h3>
+    <p>A unique array (can only add item once) which is a list of items to add, remove, and loop over</p>
+    <script>
+        const people = new Set();
+        people.add('Benjie');
+        people.add('Anna');
+        people.add('Ayler');
+        people.add('Sarah');
+        people.add('Rachel');
+        // to delete an item you don't need to find the index/location
+        people.delete('Benjie');
+        people.values();
+        peopel.add('Anna') // doesn't do anything because items are unique
+        people[0] // returns undefined because there's no index
+
+        const it = people.values();
+        it.next();
+        it.next();
+        it.next();
+        for (const person of people) {
+            console.log(person);
+        }
+
+        // different ways to create sets
+        const guitars = new Set(['Fender', 'Gibson', 'Ibanez'])
+
+        const dogs = ['Jax', 'Snickers'];
+        const dogSet = new Set(dogs);
+    </script>
+</body>
+
+</html>
