@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Destructuring</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
+    <h1>Destructuring Properties</h1>
+    <h3>Purpose:</h3>
+    <p>Allows us to easily extract data from objects, arrays, functions, etc, into their own variable!</p>
     <script>
         const person = {
             first: 'Benjie',
@@ -16,7 +21,11 @@
             instagram: '@benjiesongsong'
         }
 
-        const { first, last, instagram } = person; 
+        const {
+            first,
+            last,
+            instagram
+        } = person;
         /* equivalent to
 
         const first = person.first;
@@ -37,24 +46,38 @@
             }
         }
 
-        const {instagram: gram, facebook: fb} = benjie.links.social;
+        const {
+            instagram: gram,
+            facebook: fb
+        } = benjie.links.social;
 
         console.log(gram); // https://instagram.com/benjiesongsong
         console.log(fb); //https://facebook.com/benjiesongsong; If I were to console.log(facebook) it would return as undefined.
 
-        
-        const settings = { width: 300, color: 'black' } // also requires height and font-size;
-        const {width = 100, height = 100, color = 'blue', fontSize = 25} = settings; // fallback to default
+
+        const settings = {
+            width: 300,
+            color: 'black'
+        } // also requires height and font-size;
+        const {
+            width = 100, height = 100, color = 'blue', fontSize = 25
+        } = settings; // fallback to default
 
         console.log(width); // 300
         console.log(height); // 100
         console.log(color); // 'black'
         console.log(fontSize); // 25
-        
+
         // example to put it all together
-        const { w: width = 300, h: height = 500} = { w: 800 };
+        const {
+            w: width = 300,
+            h: height = 500
+        } = {
+            w: 800
+        };
         console.log(width); // 800;
         console.log(height); // 500;
     </script>
 </body>
+
 </html>

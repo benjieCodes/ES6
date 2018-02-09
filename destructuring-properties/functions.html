@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <h1>Destructuring Properties</h1>
+    <h3>Purpose:</h3>
+    <p>Allows us to easily extract data from objects, arrays, functions, etc, into their own variable!</p>
     <script>
         function convertCurrency(amount) {
             const converted = {
@@ -20,20 +23,31 @@
             return converted;
         }
 
-        const { USD, GPB, PHP, MEX } = convertCurrency(100);
-        console.log('PHP = ' +  PHP + ' - Phillipine Pesos!!!');
+        const {
+            USD,
+            GPB,
+            PHP,
+            MEX
+        } = convertCurrency(100);
+        console.log('PHP = ' + PHP + ' - Phillipine Pesos!!!');
 
         console.log(MEX, USD, GPB); // you can call them any order you want
 
-        function tipCalc({ total, tip = 0.15, tax = 0.07 }) { // destructured args
+        function tipCalc({
+            total,
+            tip = 0.15,
+            tax = 0.07
+        }) { // destructured args
             return total + (tip * total) + (tax * total);
         }
 
-        const bill = tipCalc({ tip: 0.25, total: 200 }); // call this however you want as well
+        const bill = tipCalc({
+            tip: 0.25,
+            total: 200
+        }); // call this however you want as well
         console.log(bill);
 
         // cannot do const bill = tipCalc(); There MUST be an object to destructure.
-        
     </script>
 </body>
 
