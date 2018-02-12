@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        const brunch = new Set();
+        // as people are coming in
+        brunch.add('benjie');
+        brunch.add('anna');
+        brunch.add('ayler');
+
+        // ready to open!
+        const line = brunch.values();
+        console.log(line.next().value);
+        console.log(line.next().value);
+        console.log(line.next().value);
+        brunch.add('sarah');
+        brunch.add('rachel');
+        console.log(line.next().value);
+        console.log(line.next().value);
+        console.log(line.next().value);
+        console.log(brunch); // you can still add to the set even while the line iterator is next()
+    </script>
+</body>
+
+</html>
