@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Maps></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>Maps</h1>
+    <h3>Purpose</h3>
+    <p>Maps are meant for objects</p>
+
+    <script>
+        const dogs = new Map();
+
+        dogs.set('Mack', 10);
+        dogs.set('Jax', 1);
+        dogs.set('Radar', 20);
+
+        // can loop Maps in two ways
+        // 1. forEach
+        // 2. for of
+
+        dogs.forEach((value, key) => console.log(value, key));
+
+        for (const [key, value] of dogs) {
+            console.log(key, value);
+        }
+    </script>
+</body>
+
+</html>
