@@ -7,6 +7,10 @@
     <title>Sets</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<h1>Weak Set</h1>
+<h3>Purpose:</h3>
+<p>- Can only be stored as an object property</p>
+<p>- Prevents memory leaks</p>
 
 <body>
     <script>
@@ -20,6 +24,9 @@
         };
 
         const weakDogs = new WeakSet([dog1], [dog2]);
+        console.log(weakDogs);
+        dog1 = null;
+        console.log(weakDogs);
     </script>
 </body>
 
