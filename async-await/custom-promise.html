@@ -22,7 +22,7 @@
 
         breathe(1000).then(res => {
             console.log(res);
-            return breathe(200)
+            return breathe(600)
         }).then(res => {
             console.log(res);
             return breathe(501)
@@ -34,10 +34,7 @@
             return breathe(2000)
         }).then(res => {
             console.log(res);
-            return breathe(10000)
-        }).then(res => {
-            console.log(res);
-            return breathe(440) // the promises break here and sends it to the catch method on line 44
+            return breathe(440) // the promises break here and sends it to the catch method on line 41
         }).then(res => {
             console.log(res);
             return breathe(777)
