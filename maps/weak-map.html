@@ -6,12 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Maps</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 
 <body>
+    <script>
+        // Garbage collection example
+        let dog1 = {
+            name: 'Jax',
+            1
+        };
+        let dog2 = {
+            name: 'Mack',
+            10
+        };
 
+        const strong = new Map();
+        const weak = new WeakMap();
+
+        strong.set(dog1, 'Jax is the best');
+        weak.set(dog2, 'Mack is the 2nd best');
+
+        // delete the items
+        dog1 = null;
+        dog2 = null;
+
+        // strong or normal Map will keep the item even though deleted - definition of a memory leak
+        // weak Map has totally cleaned it up - definition of garbage collection
+    </script>
 </body>
 
 </html>
