@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Async Await</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>Async Await</h1>
+    <h3>Purpose:</h3>
+    <ul>
+
+        <li>Asynchronous: Code will keep running without waiting for anything as opposed to synchronous</li>
+        <li>To have a cleaner work flow opposed to the webcam-promise.html and custom-promise.html files</li>
+    </ul>
+    <script>
+        // Custom Promise
+        function breathe(amount) {
+            return new Promise((resolve, reject) => {
+                if (amount < 500) {
+                    reject('You did not take a long enough breath!');
+                }
+                setTimeout(() => resolve(`I took a breathe for ${amount / 1000} seconds`), amount);
+            });
+        }
+
+        // syntax for async await
+        async function go() {
+            console.log('start');
+            const res1 = await breathe(600)
+            console.log(res1);
+            const res2 = await breathe(600)
+            console.log(res2);
+            const res3 = await breathe(600)
+            console.log(res3);
+            const res4 = await breathe(600)
+            console.log(res4);
+            const res5 = await breathe(600)
+            console.log(res5);
+            const res6 = await breathe(600)
+            console.log(res6);
+            const res7 = await breathe(600)
+            console.log(res7);
+            console.log('end');
+        }
+
+        go()
+    </script>
+</body>
+
+</html>
