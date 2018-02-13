@@ -10,6 +10,17 @@
 
 <body>
     <script>
+        const promiseRes = fetch('https://api.github.com/users/benjiecodes');
+        console.log(promiseRes); // returns a promise that data will come back
+
+        promiseRes.then(res => {
+            return res.json(); // convert the response into JSON
+        }).then(res => {
+            console.log(res); // this response is the actual data
+        }).catch(err => {
+            console.error('ERROR ERROR ERROR see below:');
+            console.error(err);
+        })
     </script>
 </body>
 
