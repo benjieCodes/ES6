@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Async Await</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        // Create a custom promise
+        function breathe(amount) {
+            return new Promise((resolve, reject) => {
+                if (amount < 500) {
+                    reject('You did not take a long enough breath!');
+                }
+                setTimeout(() => resolve(`I took a breathe for ${amount / 1000} seconds`), amount);
+            });
+        }
+
+        breathe(1000).then(res => {
+            console.log(res);
+            return breathe(200)
+        }).then(res => {
+            console.log(res);
+            return breathe(501)
+        }).then(res => {
+            console.log(res);
+            return breathe(4000)
+        }).then(res => {
+            console.log(res);
+            return breathe(2000)
+        }).then(res => {
+            console.log(res);
+            return breathe(10000)
+        }).then(res => {
+            console.log(res);
+            return breathe(440) // the promises break here and sends it to the catch method on line 44
+        }).then(res => {
+            console.log(res);
+            return breathe(777)
+        }).catch(err => {
+            console.error(err);
+            console.error('TAKE A DEEPER BREATH')
+        })
+    </script>
+</body>
+
+</html>
