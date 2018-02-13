@@ -26,32 +26,34 @@
                 setTimeout(() => resolve(`I took a breathe for ${amount / 1000} seconds`), amount);
             });
         }
-
-        // syntax for async await
-        async function go() {
-            try {
-                console.log('start');
-                const res1 = await breathe(600)
-                console.log(res1);
-                const res2 = await breathe(600)
-                console.log(res2);
-                const res3 = await breathe(600)
-                console.log(res3);
-                const res4 = await breathe(600)
-                console.log(res4);
-                const res5 = await breathe(600)
-                console.log(res5);
-                const res6 = await breathe(600)
-                console.log(res6);
-                const res7 = await breathe(600)
-                console.log(res7);
-                console.log('end');
-            } catch (err) {
-                console.error('ERROR ERROR ERROR see below:');
-                console.error(err);
+        // High order function for error Handling
+        function errorHandling(fn) {
+            return function () {
+                return fn().catch((err) => console.error(err))
             }
         }
-        go()
+        // syntax for async await
+        async function go() {
+            console.log('start');
+            const res1 = await breathe(600)
+            console.log(res1);
+            const res2 = await breathe(600)
+            console.log(res2);
+            const res3 = await breathe(600)
+            console.log(res3);
+            const res4 = await breathe(600)
+            console.log(res4);
+            const res5 = await breathe(600)
+            console.log(res5);
+            const res6 = await breathe(600)
+            console.log(res6);
+            const res7 = await breathe(230)
+            console.log(res7);
+            console.log('end');
+        }
+
+        const highOrderFunction = errorHandling(go);
+        highOrderFunction()
     </script>
 </body>
 
