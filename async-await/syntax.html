@@ -20,7 +20,7 @@
         // Custom Promise
         function breathe(amount) {
             return new Promise((resolve, reject) => {
-                if (amount < 500) {
+                if (amount < 599) {
                     reject('You did not take a long enough breath!');
                 }
                 setTimeout(() => resolve(`I took a breathe for ${amount / 1000} seconds`), amount);
@@ -29,24 +29,28 @@
 
         // syntax for async await
         async function go() {
-            console.log('start');
-            const res1 = await breathe(600)
-            console.log(res1);
-            const res2 = await breathe(600)
-            console.log(res2);
-            const res3 = await breathe(600)
-            console.log(res3);
-            const res4 = await breathe(600)
-            console.log(res4);
-            const res5 = await breathe(600)
-            console.log(res5);
-            const res6 = await breathe(600)
-            console.log(res6);
-            const res7 = await breathe(600)
-            console.log(res7);
-            console.log('end');
+            try {
+                console.log('start');
+                const res1 = await breathe(600)
+                console.log(res1);
+                const res2 = await breathe(600)
+                console.log(res2);
+                const res3 = await breathe(600)
+                console.log(res3);
+                const res4 = await breathe(600)
+                console.log(res4);
+                const res5 = await breathe(600)
+                console.log(res5);
+                const res6 = await breathe(600)
+                console.log(res6);
+                const res7 = await breathe(600)
+                console.log(res7);
+                console.log('end');
+            } catch (err) {
+                console.error('ERROR ERROR ERROR see below:');
+                console.error(err);
+            }
         }
-
         go()
     </script>
 </body>
