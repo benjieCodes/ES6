@@ -21,20 +21,20 @@
         function breathe(amount) {
             return new Promise((resolve, reject) => {
                 if (amount < 599) {
-                    reject('You did not take a long enough breath!');
+                    reject('You did not take a long enough breath!'); // error
                 }
                 setTimeout(() => resolve(`I took a breathe for ${amount / 1000} seconds`), amount);
             });
         }
         // High order function for error Handling
         function errorHandling(fn) {
-            return function () {
-                return fn().catch((err) => console.error(err))
+            return function (...args) { // used ES6 to have multiple arguments
+                return fn(...args).catch(err => console.error(err))
             }
         }
         // syntax for async await
-        async function go() {
-            console.log('start');
+        async function go(first, last) {
+            console.log(`Starting test for ${first} ${last}!`);
             const res1 = await breathe(600)
             console.log(res1);
             const res2 = await breathe(600)
@@ -53,7 +53,7 @@
         }
 
         const highOrderFunction = errorHandling(go);
-        highOrderFunction()
+        highOrderFunction('Benjie', 'Songsong')
     </script>
 </body>
 
