@@ -11,11 +11,11 @@
 <body>
     <script>
         async function go() {
-            const p1 = await fetch('https://api.github.com/users/benjiecodes').then(res => res.json())
-            const p2 = await fetch('https://api.github.com/users/wesbos').then(res => res.json())
+            const p1 = fetch('https://api.github.com/users/benjiecodes')
+            const p2 = fetch('https://api.github.com/users/wesbos')
             // Wait for both of them to come back
             const res = await Promise.all([p1, p2]);
-            const data = res.map(r => r)
+            const data = res.map(r => r.json())
             console.log(data);
         }
 
