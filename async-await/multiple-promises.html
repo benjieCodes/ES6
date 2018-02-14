@@ -16,10 +16,20 @@
             // Wait for both of them to come back
             const res = await Promise.all([p1, p2]);
             const data = res.map(r => r.json())
-            console.log(data);
+            const [benjie, wes] = await Promise.all(data);
+            console.log(benjie, wes);
+
+        }
+        go()
+
+        async function go2(names) {
+            const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(res => res.json()))
+            console.log(promises);
+            const people = await Promise.all(promises);
+            console.log(people);
         }
 
-        go()
+        go2(['benjieCodes', 'wesbos'])
     </script>
 </body>
 
