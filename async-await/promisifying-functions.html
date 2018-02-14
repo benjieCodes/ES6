@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Async Await - Promisfying Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            console.log('it worked!');
+            console.log(pos);
+        }, function (err) {
+            console.log('it failed!');
+            console.log(err);
+        })
+    </script>
+</body>
+
+</html>
