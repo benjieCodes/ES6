@@ -17,6 +17,13 @@
         //     console.log('it failed!');
         //     console.log(err);
         // })
+
+        function error(fn) {
+            return function () {
+                return fn().catch(err => console.error(err.message));
+            }
+        }
+
         function getCurrentPosition(...args) { // added args so you can add options in getCurrentPosition!
             return new Promise((resolve, reject) => {
                 navigator.geolocation.getCurrentPosition(...args, resolve, reject);
@@ -27,9 +34,11 @@
             console.log('starting');
             const position = await getCurrentPosition();
             console.log(position);
-            console.log('found position!');
+            console.log('successfully found position!');
         }
-        go();
+
+        const errorHandling = error(go);
+        errorHandling()
     </script>
 </body>
 
